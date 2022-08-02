@@ -1,4 +1,5 @@
 import copy
+
 from app.design_patterns.creational.prototype import StackOverflowAnswer
 
 

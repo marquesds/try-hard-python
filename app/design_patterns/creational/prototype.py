@@ -5,6 +5,7 @@ Prototype:
 See: https://refactoring.guru/design-patterns/prototype
 """
 from __future__ import annotations  # enables using current class as returning type
+
 import copy
 
 

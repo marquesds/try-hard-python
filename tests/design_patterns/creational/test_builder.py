@@ -5,7 +5,12 @@ class TestBuilder:
     def test_should_build_user_with_all_attributes_when_adding_them_all(self) -> None:
         expected_user = User("Lucas", 31, "99999999999", "Test address")
         result_user = (
-            UserBuilder().add_name("Lucas").add_age(31).add_phone("99999999999").add_address("Test address").build()
+            UserBuilder()
+            .add_name("Lucas")
+            .add_age(31)
+            .add_phone("99999999999")
+            .add_address("Test address")
+            .build()
         )
 
         assert expected_user.name == result_user.name
