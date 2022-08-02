@@ -9,6 +9,11 @@ import copy
 
 
 class StackOverflowAnswer:
+    """
+    This is just an example. Since Python have copy and deepcopy methods,
+    there is no need to implement this pattern in real life.
+    """
+
     def __init__(self, code: str, is_correct: bool) -> None:
         self.code = code
         self.is_correct = is_correct
