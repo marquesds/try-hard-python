@@ -4,7 +4,7 @@ from app.design_patterns.structural.adapter import AccountingReport, JsonAdapter
 
 
 class TestAdapter:
-    def test_should_convert_report_format_when_using_adapter(self):
+    def test_should_convert_report_format_when_using_adapter(self) -> None:
         accounting_report = AccountingReport()
         json_report = JsonAdapter(accounting_report)
 

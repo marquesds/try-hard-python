@@ -4,7 +4,7 @@ from app.design_patterns.creational.prototype import StackOverflowAnswer
 
 
 class TestPrototype:
-    def test_should_clone_object_with_all_its_attributes(self):
+    def test_should_clone_object_with_all_its_attributes(self) -> None:
         expected_object = StackOverflowAnswer("<h1>this answer is right</h1>", True)
         result_object = copy.copy(expected_object)
 

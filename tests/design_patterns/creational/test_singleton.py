@@ -2,7 +2,7 @@ from app.design_patterns.creational.singleton import UniverseAnswer
 
 
 class TestSingleton:
-    def test_should_get_same_id_when_same_instance(self):
+    def test_should_get_same_id_when_same_instance(self) -> None:
         expected_answer = UniverseAnswer()
         result_answer = UniverseAnswer()
 
