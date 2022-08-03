@@ -6,10 +6,11 @@ Singleton:
 See: https://refactoring.guru/design-patterns/singleton
 """
 import random
+from typing import Any, Dict
 
 
 class SingletonMeta(type):
-    _instances = {}
+    _instances: Dict[Any, Any] = {}
 
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:

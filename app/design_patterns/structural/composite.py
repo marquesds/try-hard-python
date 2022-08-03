@@ -8,16 +8,16 @@ See: https://refactoring.guru/design-patterns/composite
 from __future__ import annotations
 
 import abc
-from typing import Optional
+from typing import List, Optional, Union
 
 
 class Subject(abc.ABC):
     @property
-    def parent(self) -> Subject:
+    def parent(self) -> Optional[Subject]:
         return self._parent
 
     @parent.setter
-    def parent(self, parent: Subject):
+    def parent(self, parent: Optional[Subject]):
         self._parent = parent
 
     def is_composite(self) -> bool:
@@ -27,7 +27,7 @@ class Subject(abc.ABC):
     def get_name(self) -> Optional[str]:
         pass
 
-    def get_subject(self) -> str:
+    def get_subject(self) -> Optional[str]:
         return self.get_name()
 
 
@@ -54,7 +54,7 @@ class Composite(Subject):
     def get_name(self) -> Optional[str]:
         pass
 
-    def get_subject(self) -> str:
+    def get_subject(self) -> Optional[str]:
         results = [self.get_name()] if self.get_name() else []
         for child in self._children:
             results.append(child.get_subject())
@@ -106,11 +106,11 @@ class ProgrammingSubject(Composite):
         return "Programming"
 
 
-def get_biology_subject() -> str:
+def get_biology_subject() -> Optional[str]:
     return BiologySubject().get_subject()
 
 
-def get_programming_subjects() -> str:
+def get_programming_subjects() -> Optional[str]:
     composite = Composite()
 
     solid = SOLIDSubject()
@@ -128,3 +128,7 @@ def get_programming_subjects() -> str:
 
     composite.add(programming)
     return composite.get_subject()
+
+
+if __name__ == "__main__":
+    print(get_programming_subjects())
